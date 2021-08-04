@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
-import 'common-library/src/styles.scss'
+import 'common-library/src/assets/scss/styles.scss'
 import classNames from 'classnames'
 import { people } from '../assets/helpers/people.js'
 import gold from '../assets/images/leaderboard/gold.svg'
