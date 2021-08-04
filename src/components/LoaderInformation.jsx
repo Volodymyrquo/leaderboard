@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { FC, useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
 import LeaderboardChart from './LeaderboardChart'
 
 import cup from '../assets/images/leaderboard/cup.svg'
