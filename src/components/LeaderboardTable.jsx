@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { FC, useState } from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames'
 import { people } from '../assets/helpers/people'
 import gold from '../assets/images/leaderboard/gold.svg'
@@ -20,10 +20,7 @@ const LeaderboardTable = () => {
       return +b.earnings - +a.earnings
     })
   )
-  const [allTime, setAllTime] = useState(true)
-  const [week, setWeek] = useState(false)
-  const [monht, setMonht] = useState(false)
-  const [year, setYear] = useState(false)
+  const [activeTab, setActiveTab] = useState('allTime')
   const indexOfLastUsers = currentPage * showUsers
   const indexOfFirstUsers = indexOfLastUsers - showUsers
   const currentUsers = sortPeople.slice(indexOfFirstUsers, indexOfLastUsers)
@@ -69,49 +66,37 @@ const LeaderboardTable = () => {
           <div className='leaderboard-page__block-btn'>
             <button
               className={classNames('leaderboard-page__btn', {
-                'leaderboard-page__btn-active': allTime,
+                'leaderboard-page__btn-active': 'allTime',
               })}
               onClick={() => {
-                setAllTime(true)
-                setWeek(false)
-                setMonht(false)
-                setYear(false)
+                setActiveTab('allTime')
               }}>
               All time
             </button>
             <button
               className={classNames('leaderboard-page__btn', {
-                'leaderboard-page__btn-active': week,
+                'leaderboard-page__btn-active': 'week',
               })}
               onClick={() => {
-                setAllTime(false)
-                setWeek(true)
-                setMonht(false)
-                setYear(false)
+                setActiveTab('week')
               }}>
               This week
             </button>
             <button
               className={classNames('leaderboard-page__btn', {
-                'leaderboard-page__btn-active': monht,
+                'leaderboard-page__btn-active': 'month',
               })}
               onClick={() => {
-                setAllTime(false)
-                setWeek(false)
-                setMonht(true)
-                setYear(false)
+                setActiveTab('month')
               }}>
               This month
             </button>
             <button
               className={classNames('leaderboard-page__btn', {
-                'leaderboard-page__btn-active': year,
+                'leaderboard-page__btn-active': 'year',
               })}
               onClick={() => {
-                setAllTime(false)
-                setWeek(false)
-                setMonht(false)
-                setYear(true)
+                setActiveTab('year')
               }}>
               This year
             </button>
