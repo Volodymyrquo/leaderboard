@@ -101,6 +101,15 @@ const LeaderboardTable = () => {
               }}>
               This year
             </button>
+            <button
+              className={classNames('leaderboard-page__btn', {
+                'leaderboard-page__btn-active': activeTab === 'year',
+              })}
+              onClick={() => {
+                setActiveTab('year')
+              }}>
+              This test
+            </button>
           </div>
         </div>
         <div className='leaderboard-page__block-table-fixed'>
