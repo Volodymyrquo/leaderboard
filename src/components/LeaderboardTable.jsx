@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
+import '../assets/scss/main.scss'
 import classNames from 'classnames'
-import { people } from '../assets/helpers/people'
+import { people } from '../assets/helpers/people.js'
 import gold from '../assets/images/leaderboard/gold.svg'
 import silver from '../assets/images/leaderboard/silver.svg'
 import bronze from '../assets/images/leaderboard/bronze.svg'
@@ -9,7 +10,7 @@ import star from '../assets/images/leaderboard/star.svg'
 import user from '../assets/images/leaderboard/user.svg'
 import users from '../assets/images/leaderboard/users.svg'
 import dolar from '../assets/images/leaderboard/dolar.svg'
-import LoaderInformation from './LoaderInformation'
+import LoaderInformation from './LoaderInformation.jsx'
 
 const LeaderboardTable = () => {
   // eslint-disable-next-line no-unused-vars
@@ -66,7 +67,7 @@ const LeaderboardTable = () => {
           <div className='leaderboard-page__block-btn'>
             <button
               className={classNames('leaderboard-page__btn', {
-                'leaderboard-page__btn-active': 'allTime',
+                'leaderboard-page__btn-active': activeTab === 'allTime',
               })}
               onClick={() => {
                 setActiveTab('allTime')
@@ -75,7 +76,7 @@ const LeaderboardTable = () => {
             </button>
             <button
               className={classNames('leaderboard-page__btn', {
-                'leaderboard-page__btn-active': 'week',
+                'leaderboard-page__btn-active': activeTab === 'week',
               })}
               onClick={() => {
                 setActiveTab('week')
@@ -84,7 +85,7 @@ const LeaderboardTable = () => {
             </button>
             <button
               className={classNames('leaderboard-page__btn', {
-                'leaderboard-page__btn-active': 'month',
+                'leaderboard-page__btn-active': activeTab === 'month',
               })}
               onClick={() => {
                 setActiveTab('month')
@@ -93,7 +94,7 @@ const LeaderboardTable = () => {
             </button>
             <button
               className={classNames('leaderboard-page__btn', {
-                'leaderboard-page__btn-active': 'year',
+                'leaderboard-page__btn-active': activeTab === 'year',
               })}
               onClick={() => {
                 setActiveTab('year')

@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { FC, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Context } from '../../../../contexts/Routes/context'
 import LeaderboardChart from './LeaderboardChart'
 
 import cup from '../assets/images/leaderboard/cup.svg'
@@ -94,7 +93,6 @@ const LoaderInformation = () => {
       setShowUsers(sortUsers.length - showUsers + showUsers)
     }
   }
-  const { setSubPage } = useContext(Context)
   return (
     <div className='leaderboard-page__block-information'>
       <div className='leaderboard-page__blok-rank'>
@@ -139,14 +137,9 @@ const LoaderInformation = () => {
               />
             ))}
           </div>
-          <Link
-            to='/referrals'
-            className='leaderboard-page__btn-socials'
-            onClick={() => {
-              setSubPage('shareCashbacksLeaderboard')
-            }}>
+          <a href='/referrals' className='leaderboard-page__btn-socials'>
             +24
-          </Link>
+          </a>
         </div>
       </div>
 

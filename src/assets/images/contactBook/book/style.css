@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?5hk0pc');
+  src:  url('fonts/icomoon.eot?5hk0pc#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?5hk0pc') format('truetype'),
+    url('fonts/icomoon.woff?5hk0pc') format('woff'),
+    url('fonts/icomoon.svg?5hk0pc#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wallet1:before {
+  content: "\e910";
+}
+.icon-leaderboard:before {
+  content: "\e907";
+  color: #fff;
+}
+.icon-users:before {
+  content: "\e915";
+  color: #fafafc;
+}
+.icon-upload:before {
+  content: "\e916";
+  color: #fff;
+}
+.icon-star:before {
+  content: "\e917";
+  color: #fff;
+}
+.icon-downloadCloud:before {
+  content: "\e918";
+  color: #fff;
+}
+.icon-disc:before {
+  content: "\e919";
+  color: #fafafc;
+}
+.icon-crosshair:before {
+  content: "\e920";
+  color: #fff;
+}
+.icon-clock:before {
+  content: "\e921";
+  color: #fff;
+}
+.icon-statistics:before {
+  content: "\e900";
+  color: #fff;
+}
+.icon-rewards:before {
+  content: "\e901";
+  color: #fff;
+}
+.icon-rentpay:before {
+  content: "\e902";
+  color: #fff;
+}
+.icon-referrals:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-pioneer:before {
+  content: "\e904";
+  color: #fff;
+}
+.icon-persCode:before {
+  content: "\e905";
+  color: #7165e3;
+}
+.icon-history:before {
+  content: "\e908";
+  color: #fff;
+}
+.icon-global:before {
+  content: "\e909";
+  color: #fff;
+}
+.icon-dashboard:before {
+  content: "\e90a";
+  color: #fff;
+}
+.icon-contact:before {
+  content: "\e90b";
+  color: #fff;
+}
+.icon-cashbacks:before {
+  content: "\e90c";
+  color: #fff;
+}
+.icon-dollar-sign:before {
+  content: "\e906";
+}
