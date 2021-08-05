@@ -33,16 +33,16 @@
     "style-loader": "^3.2.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.47.0",
-    "webpack-cli": "^4.7.2"
+    "webpack-cli": "^4.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0"
   },
   "dependencies": {
     "chart.js": "^3.5.0",
     "classnames": "^2.3.1",
     "common-library": "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git",
-    "react": "^17.0.2",
-    "react-chartjs-2": "^3.0.4",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0"
+    "react-chartjs-2": "^3.0.4"
   },
   "peerDependencies": {
     "react": "^17.0.2",
