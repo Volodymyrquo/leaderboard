@@ -1437,9 +1437,9 @@ commander@^7.0.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
   integrity sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==
 
-"common-library@https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git":
+"common-library@https://github.com/Volodymyrquo/common-library.git":
   version "1.0.0"
-  resolved "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git#2d64734cc2058775eeda74db90cf5a1faf3a5cb4"
+  resolved "https://github.com/Volodymyrquo/common-library.git#f2323b68650d4a386867bbf54a2d7605528aa8f1"
 
 commondir@^1.0.1:
   version "1.0.1"

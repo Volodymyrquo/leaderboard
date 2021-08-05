@@ -41,7 +41,6 @@
   "dependencies": {
     "chart.js": "^3.5.0",
     "classnames": "^2.3.1",
-    "common-library": "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git",
     "react-chartjs-2": "^3.0.4"
   },
   "peerDependencies": {
