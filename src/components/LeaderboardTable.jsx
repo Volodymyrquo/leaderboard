@@ -61,7 +61,7 @@ const LeaderboardTable = () => {
   }
 
   return (
-    <section className='leaderboard-page'>
+    <section className='leaderboard-page' style={{ padding: '30px' }}>
       <div className='leaderboard-page__block-table'>
         <div className='leaderboard-page__block-btn-scroll'>
           <div className='leaderboard-page__block-btn'>
