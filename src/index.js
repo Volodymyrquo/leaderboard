@@ -1,1 +1,1 @@
-export { default } from './components/LeaderboardTable.jsx'
+export { default } from './App.jsx'

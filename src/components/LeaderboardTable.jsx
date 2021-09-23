@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import 'common-library/src/assets/scss/styles.scss'
 import classNames from 'classnames'
 import { people } from '../assets/helpers/people.js'
@@ -11,13 +11,20 @@ import user from '../assets/images/leaderboard/user.svg'
 import users from '../assets/images/leaderboard/users.svg'
 import dolar from '../assets/images/leaderboard/dolar.svg'
 import LoaderInformation from './LoaderInformation.jsx'
+import { getLeaders } from '../api/api.js'
+import { Context } from '../context/context.js'
+import { v4 as uuidv4 } from 'uuid'
 
 const LeaderboardTable = () => {
+  const { leadersList, getLeadersList, getMoreLeaders } = useContext(Context)
+  useEffect(() => {
+    getLeadersList()
+  }, [])
   // eslint-disable-next-line no-unused-vars
   const [currentPage, setCurrentPage] = useState(1)
   const [showUsers, setShowUsers] = useState(10)
   const [sortPeople, setSortCashback] = useState(
-    [...people].sort((a, b) => {
+    [...leadersList].sort((a, b) => {
       return +b.earnings - +a.earnings
     })
   )
@@ -59,7 +66,8 @@ const LeaderboardTable = () => {
       return 'th'
     }
   }
-
+  const dolar = 'https://i.ibb.co/jrmB7fV/dolar.png'
+  console.log('#### this is render ####')
   return (
     <section className='leaderboard-page'>
       <div className='leaderboard-page__block-table'>
@@ -114,12 +122,12 @@ const LeaderboardTable = () => {
               </tr>
             </thead>
             <tbody>
-              {currentUsers.map((user, index) => (
-                <tr key={index}>
+              {leadersList.map((user, index) => (
+                <tr key={uuidv4()}>
                   <td className='leaderboard-page__td leaderboard-page__td-width'>
                     {index + 1}
                     <sup className='leaderboard-page__sup'>
-                      {returnSub(index)}
+                      {returnSub(user.id)}
                     </sup>
                     <img
                       className='leaderboard-page__td-img'
@@ -133,7 +141,7 @@ const LeaderboardTable = () => {
                       src={user.img}
                       alt=''
                     />
-                    {user.name}
+                    {user.username}
                   </td>
                   <td className='leaderboard-page__td leaderboard-page__td-color'>
                     <img
@@ -141,16 +149,16 @@ const LeaderboardTable = () => {
                       src={users}
                       alt=''
                     />
-                    {user.invited}
+                    {user.amount}
                   </td>
                   <td className='leaderboard-page__td'>
                     {' '}
                     <img
                       className='leaderboard-page__td-img-dolar'
-                      src={user.dolar}
+                      src={dolar}
                       alt=''
                     />
-                    {`$ ${user.earnings.toLocaleString('en-US')}`}
+                    {`$ ${user.reward.toLocaleString('en-US')}`}
                   </td>
                 </tr>
               ))}
@@ -195,10 +203,10 @@ const LeaderboardTable = () => {
                 <th className='leaderboard-page__th leaderboard-page__th-last'>
                   <span className='leaderboard-page__text'>
                     {`Showing ${currentUsers.length + 1} of ${
-                      people.length + 1
+                      leadersList.length + 1
                     } operation`}
                     <span
-                      onClick={addPeople}
+                      onClick={getMoreLeaders}
                       className='leaderboard-page__arrow'>
                       View more
                     </span>
@@ -218,4 +226,4 @@ const LeaderboardTable = () => {
     </section>
   )
 }
-export default LeaderboardTable
+export default React.memo(LeaderboardTable)

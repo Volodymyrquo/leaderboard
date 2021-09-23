@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React, { FC, useState, useContext } from 'react'
+import React, { FC, useState, useContext, useEffect } from 'react'
 import LeaderboardChart from './LeaderboardChart'
-
+import { Context } from '../context/context.js'
 import cup from '../assets/images/leaderboard/cup.svg'
 import round from '../assets/images/leaderboard/round.svg'
 import arrow from '../assets/images/leaderboard/arrow.svg'
@@ -84,7 +84,7 @@ const LoaderInformation = () => {
   const indexOfLastUsers = currentPage * showUsers
   const indexOfFirstUsers = indexOfLastUsers - showUsers
   const currentUsers = sortUsers.slice(indexOfFirstUsers, indexOfLastUsers)
-
+  const { getUserInfo, reward, rank, grow_this_month } = useContext(Context)
   const addPeople = () => {
     if (showUsers !== sortUsers.length && sortUsers.length - showUsers >= 5) {
       setShowUsers(showUsers + 25)
@@ -92,6 +92,9 @@ const LoaderInformation = () => {
       setShowUsers(sortUsers.length - showUsers + showUsers)
     }
   }
+  useEffect(() => {
+    getUserInfo()
+  }, [])
   return (
     <div className='leaderboard-page__block-information'>
       <div className='leaderboard-page__blok-rank'>
@@ -102,13 +105,13 @@ const LoaderInformation = () => {
             <div className='leaderboard-page__place'>
               <img className='leaderboard-page__place-img' src={round} alt='' />
               <span className='leaderboard-page__number'>
-                12 <sup className='leaderboard-page__sup'>th</sup>
+                {rank} <sup className='leaderboard-page__sup'>th</sup>
               </span>
             </div>
             <div className='leaderboard-page__block-month'>
               <div className='leaderboard-page__month-title'>This month</div>
               <div className='leaderboard-page__month-number'>
-                <img src={arrow} alt='img arrow' /> +10
+                <img src={arrow} alt='img arrow' /> +{grow_this_month}
               </div>
             </div>
             <div className='leaderboard-page__block-month'>
@@ -119,7 +122,7 @@ const LoaderInformation = () => {
                   src={dolar}
                   alt='img arrow'
                 />
-                $2,135.50
+                $ {reward}
               </div>
             </div>
           </div>
@@ -162,4 +165,4 @@ const LoaderInformation = () => {
     </div>
   )
 }
-export default LoaderInformation
+export default React.memo(LoaderInformation)
